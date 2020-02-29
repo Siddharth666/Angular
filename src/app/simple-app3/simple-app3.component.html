@@ -1,0 +1,52 @@
+<p>simple-app3 works!</p>
+<h1>Angular + C#/Web-API + MS-SQL</h1>
+
+
+<div class="container">
+    <form name="registerForm" id="ValidateForm" [formGroup]="registerForm" method="POST">
+    
+         <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" class="form-control" id="FirstName" [(ngModel)]="FirstName" formControlName="FirstName" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Last Name</label>
+            <input type="text" class="form-control" id="LastName" [(ngModel)]="LastName" formControlName="LastName" required>
+          </div> 
+    
+      <button type="submit" class="btn btn-success"  (click)="onRegister()">Submit</button> <br />
+    
+     Search By ID <input type="text" class="form-control" id="byId" formControlName="byId" required>
+      <button type="submit" class="btn btn-primary"  (click)="onSearch()">Search</button> <br />
+      <br />
+      <button type="submit" class="btn btn-danger"  (click)="onDelete()">Delete</button>
+      <button type="submit" class="btn btn-warning"  (click)="onUpdate()">Update</button> <br />
+      <br />
+      <button type="submit" class="btn btn-info"  (click)="onSearchAll()">Get All</button>
+      
+      </form>
+
+      <table border="1px;" class="table table-hover">
+        <thead>
+        <tr>
+            <td>First Name</td>
+            
+            <td>Last Name</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let hero of getall">
+            <td>{{hero.FirstName}}</td>
+            
+            <td>{{hero.LastName}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    Send Email To: <input type="text" class="form-control" id="To" [(ngModel)]="To"  required>
+    Subject: <input type="text" class="form-control" id="Subject" [(ngModel)]="Subject" required>
+    Body: <textarea type="text" class="form-control" id="Body" [(ngModel)]="Body" required rows="5"></textarea>
+    <button type="submit" class="btn btn-info"  (click)="EmailSend()">Send Email</button>
+
+    </div>

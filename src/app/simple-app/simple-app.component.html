@@ -1,0 +1,53 @@
+<h2>Angular + NodeJs + Express + MongoDb</h2>
+
+<div class="container">
+<form name="registerForm" id="ValidateForm" [formGroup]="registerForm" method="POST">
+
+     <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="name" formControlName="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Email Id</label>
+        <input type="text" class="form-control" id="emailid" [(ngModel)]="emailid" formControlName="emailid" required>
+      </div> 
+
+  <button type="submit" class="btn btn-success"  (click)="onRegister()">Submit</button> <br />
+
+ Search By Id <input type="text" class="form-control" id="byId" formControlName="byId" required>
+  <button type="submit" class="btn btn-primary"  (click)="onSearch()">Search</button> <br />
+  <br />
+  <button type="submit" class="btn btn-danger"  (click)="onDelete()">Delete</button>
+  <button type="submit" class="btn btn-warning"  (click)="onUpdate()">Update</button> <br />
+<br />
+  <button type="submit" class="btn btn-info"  (click)="onSearchAll()">Get All</button>
+  </form>
+
+        <table border="1px;" class="table table-hover">
+          <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Email Id</td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor = "let hero of ff">
+                <td>{{hero._id}}</td>
+                <td>{{hero.name}}</td>
+                <td>{{hero.email}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        Send Email To: <input type="text" class="form-control" id="To" [(ngModel)]="To"  required>
+        Subject: <input type="text" class="form-control" id="Subject" [(ngModel)]="Subject" required>
+        Body: <textarea type="text" class="form-control" id="Body" [(ngModel)]="Body" required rows="5"></textarea>
+        <button type="submit" class="btn btn-info"  (click)="EmailSend()">Send Email</button>
+</div>
+
+
+<hr />
+<h2>Charts</h2>

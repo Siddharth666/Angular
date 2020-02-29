@@ -1,0 +1,49 @@
+<h1>Angular + Flask/Python + MongoDb</h1>
+
+
+<div class="container">
+    <form name="registerForm" id="ValidateForm" [formGroup]="registerForm" method="POST">
+    
+         <div class="form-group">
+            <label for="name">Name</label> &nbsp; <button type="submit" class="btn btn-primary"  (click)="onSayName()">Say Name</button>
+            <input type="text" class="form-control" id="name" [(ngModel)]="name" formControlName="name" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="name">Language</label> &nbsp; <button type="submit" class="btn btn-primary"  (click)="onSayLanguage()">Say Language</button>
+            <input type="text" class="form-control" id="language" [(ngModel)]="language" formControlName="language" required>
+          </div> 
+    
+      <button type="submit" class="btn btn-success"  (click)="onRegister()">Submit</button> <br />
+    
+     Search By Name <input type="text" class="form-control" id="byname" formControlName="byname" required>
+      <button type="submit" class="btn btn-primary"  (click)="onSearch()">Search</button> <br />
+      <br />
+      <button type="submit" class="btn btn-danger"  (click)="onDelete()">Delete</button>
+      <button type="submit" class="btn btn-warning"  (click)="onUpdate()">Update</button> <br />
+      <br />
+      <button type="submit" class="btn btn-info"  (click)="onSearchAll()">Get All</button>
+
+      <button type="submit" class="btn btn-primary"  routerLink="/flaskemail">Send Someone Email</button>
+
+      <button type="submit" class="btn btn-primary"  (click)="onSaySomething()">Do Google Search</button>
+      </form>
+
+      <table border="1px;" class="table table-hover">
+        <thead>
+        <tr>
+            <td>Name</td>
+            
+            <td>Language</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let hero of getall">
+            <td>{{hero.language}}</td>
+            
+            <td>{{hero.name}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    </div>

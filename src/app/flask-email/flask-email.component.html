@@ -1,0 +1,13 @@
+<p>flask-email works!</p>
+<div style="background-image: url('../../assets/landscape.jpg')">
+<div class="container form-group">
+Send To: <br />
+<input type="text" id="EmailTo" [(ngModel)]='EmailTo' class="form-control">
+<br />
+
+Message: <br />
+<textarea type="text" id="MSG" [(ngModel)]='MSG' class="form-control" rows="20"></textarea>
+<br />
+<button type="submit" class="btn btn-primary form-control" (click)="onEmail()">SEND</button> <br /><br /><br />
+</div>
+</div>
